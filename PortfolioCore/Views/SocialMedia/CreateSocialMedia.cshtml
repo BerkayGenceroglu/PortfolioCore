@@ -1,0 +1,26 @@
+﻿@model PortfolioCore.Entities.SocialMedia
+
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post" class="p-4 border rounded shadow bg-light" style="max-width: 600px;">
+    <div class="mb-3">
+        <label class="form-label">İsim</label>
+        <input type="text" class="form-control border border-dark" asp-for="Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">İkon</label>
+        <input type="text" class="form-control border border-dark" asp-for="Icon" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Bağlantı</label>
+        <input type="text" class="form-control border border-dark" asp-for="Url" />
+    </div>
+    <button type="submit" class="btn btn-primary">Sosyal Medya Oluştur</button>
+</form>
+
+

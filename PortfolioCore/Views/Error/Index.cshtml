@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;  // Eğer genel layout kullanmak istemiyorsan, null yapabilirsin. Yoksa kendi layout'unu kullanabilirsin.
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hata - Bir şeyler ters gitti!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .error-container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgb(0 0 0 / 0.1);
+            max-width: 450px;
+            width: 90%;
+        }
+
+        .error-code {
+            font-size: 96px;
+            font-weight: 700;
+            color: #dc3545; /* Bootstrap'ın kırmızı tonu */
+            margin-bottom: 20px;
+            user-select: none;
+        }
+
+        .error-message {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #212529;
+        }
+
+        .error-description {
+            font-size: 16px;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+
+        .btn-home {
+            background-color: #0d6efd;
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background-color: #0842c5;
+            color: white;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-message">Oops! Bir şeyler ters gitti.</div>
+        <div class="error-description">
+            Üzgünüz, sunucuda beklenmeyen bir hata oluştu.<br />
+            Lütfen biraz sonra tekrar deneyin veya ana sayfaya dönün.
+        </div>
+        <a href="/Default/Index" class="btn-home">Ana Sayfaya Dön</a>
+
+        <footer>
+            &copy; @DateTime.Now.Year - Senin Şirketin veya Projen
+        </footer>
+    </div>
+</body>
+</html>
+

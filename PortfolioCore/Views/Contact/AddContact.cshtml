@@ -1,0 +1,31 @@
+﻿@model PortfolioCore.Entities.Contact
+@{
+    ViewData["Title"] = "AddContact";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<form method="post" class="p-4 border rounded shadow bg-light" style="max-width: 600px;">
+    <div class="mb-3">
+        <label class="form-label">Adress</label>
+        <input type="text" class="form-control border border-dark" asp-for="Address" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Numara</label>
+        <input type="text" class="form-control border border-dark" asp-for="PhoneNumber" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Mail</label>
+        <input type="text" class="form-control border border-dark" asp-for="Email" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Konum</label>
+        <input type="text" class="form-control border border-dark" asp-for="Location" />
+    </div>
+    <button type="submit" class="btn btn-primary">Hakkımda Kısmını Oluştur</button>
+</form>
+

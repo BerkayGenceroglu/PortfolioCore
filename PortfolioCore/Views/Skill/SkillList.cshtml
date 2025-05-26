@@ -1,0 +1,49 @@
+﻿@model List<Skill>
+@{
+    ViewData["Title"] = "SkillList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 class="text-center my-4">🛠️ Yetenek Listesi</h2>
+
+<div class="container">
+    <table class="table table-striped table-hover table-bordered text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Yetenek Başlığı</th>
+                <th>Yetenek Değeri</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SkillId</td>
+                    <td>@item.SkillName</td>
+                    <td>@item.SkillValue</td>
+                    <td>
+                        <a href="/Skill/DeleteSkill/@item.SkillId" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash"></i> Sil
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Skill/UpdateSkill/@item.SkillId" class="btn btn-success btn-sm">
+                            <i class="bi bi-pencil-square"></i> Güncelle
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-end">
+        <a href="/Skill/CreateSkill/" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Yeni Yetenek Girişi
+        </a>
+    </div>
+</div>
+
+

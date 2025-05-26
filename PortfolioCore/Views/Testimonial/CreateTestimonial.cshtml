@@ -1,0 +1,30 @@
+﻿@model PortfolioCore.Entities.Testimonial
+
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post" class="p-4 border rounded shadow bg-light" style="max-width: 600px;">
+    <div class="mb-3">
+        <label class="form-label">Ad Soyad</label>
+        <input type="text" class="form-control border border-dark" asp-for="NameSurname" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Meslek</label>
+        <input type="text" class="form-control border border-dark" asp-for="Title" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Açıklama</label>
+        <input type="text" class="form-control border border-dark" asp-for="CommentDetail" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">ImageUrl</label>
+        <input type="text" class="form-control border border-dark" asp-for="ImageUrl" />
+    </div>
+    <button type="submit" class="btn btn-primary">Hakkımda Kısmını Oluştur</button>
+</form>
+

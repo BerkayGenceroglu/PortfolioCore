@@ -1,0 +1,44 @@
+﻿@model List<PortfolioCore.Entities.About>
+@{
+    ViewData["Title"] = "AboutList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-dark">Hakkımda Bilgileri</h2>
+        <a href="/About/CreateAbout" class="btn btn-primary">+ Yeni Hakkımda Girişi</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped shadow">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Bölüm</th>
+                <th scope="col">Neler Yaptım</th>
+                <th scope="col">Konum</th>
+                <th scope="col">Telefon</th>
+                <th scope="col">Doğum Tarihim</th>
+                <th scope="col">Sil</th>
+                <th scope="col">Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.AboutId</td>
+                    <td>@item.Title1</td>
+                    <td>@item.Description1</td>
+                    <td>@item.City</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Birthday</td>
+                    <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-sm btn-danger">Sil</a></td>
+                    <td><a href="/About/UpdateAbout/@item.AboutId" class="btn btn-sm btn-success">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

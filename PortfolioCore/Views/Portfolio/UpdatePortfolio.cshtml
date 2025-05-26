@@ -1,0 +1,27 @@
+﻿@model Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<form method="post">
+    <input type="hidden" asp-for="PortfolioId" />
+    <label>Proje Başlığı</label>
+    <input type="text" class="form-control" asp-for="Title" placeholder="Proje Başlığı" />
+    <br />
+    <label>Proje Başlığı</label>
+    <input type="text" class="form-control" asp-for="Description" placeholder="Proje Başlığı" />
+    <br />
+    <label>Proje Başlığı</label>
+    <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Proje Başlığı" />
+    <br />
+
+    <label>Proje Kategorisi</label>
+    <select asp-for="CategoryId" asp-items="ViewBag.v" class="form-control">
+        <option value="">--Seçiniz----</option>
+    </select>
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

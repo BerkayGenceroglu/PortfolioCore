@@ -1,0 +1,50 @@
+﻿@model PortfolioCore.Entities.About
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post" class="p-4 border rounded shadow bg-light" style="max-width: 600px;">
+    <div class="mb-3">
+        <label class="form-label">Bölüm</label>
+        <input type="text" class="form-control border border-dark" asp-for="Title1" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Ben Kimim</label>
+        <input type="text" class="form-control border border-dark" asp-for="Description1" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Konum</label>
+        <input type="text" class="form-control border border-dark" asp-for="City" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Telefon</label>
+        <input type="text" class="form-control border border-dark" asp-for="Phone" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Doğum Tarihim</label>
+        <input type="text" class="form-control border border-dark" asp-for="Birthday" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Yaş</label>
+        <input type="text" class="form-control border border-dark" asp-for="Age" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Mail</label>
+        <input type="text" class="form-control border border-dark" asp-for="Email" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Açıklama</label>
+        <input type="text" class="form-control border border-dark" asp-for="Description2" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Görsel</label>
+        <input type="text" class="form-control border border-dark" asp-for="ImageUrl" />
+    </div>
+    <button type="submit" class="btn btn-primary">Hakkımda Kısmını Oluştur</button>
+</form>
+
+

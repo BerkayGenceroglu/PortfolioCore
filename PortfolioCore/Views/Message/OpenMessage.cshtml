@@ -1,0 +1,30 @@
+﻿@model PortfolioCore.Entities.Message
+@{
+    ViewData["Title"] = "Mesaj Detayı";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2 class="mt-4 mb-4 text-primary">📩 Mesaj Detayı</h2>
+
+<input type="hidden" asp-for="MessageId" />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow rounded">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-envelope-open-text"></i> Mesaj Bilgileri</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>👤 Gönderen:</strong> @Model.NameSurname</p>
+                    <p><strong>📧 Email:</strong> <a href="mailto:@Model.Email">@Model.Email</a></p>
+                    <p><strong>📅 Gönderim Tarihi:</strong> @Model.SendDate.ToString("dd MMMM yyyy HH:mm")</p>
+                    <hr />
+                    <p><strong>💬 Mesaj İçeriği:</strong></p>
+                    <div class="alert alert-light border">
+                        @Model.MessageDetail
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

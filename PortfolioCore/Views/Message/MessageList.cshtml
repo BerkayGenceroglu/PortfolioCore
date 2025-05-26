@@ -1,0 +1,52 @@
+﻿@model List<PortfolioCore.Entities.Message>
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-dark">Message Listesi</h2>
+        <a href="/Experience/CreateExperience" class="btn btn-primary">+ Yeni Message Girişi</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped shadow">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ad-Soyad</th>
+                <th scope="col">Mail</th>
+                <th scope="col">Konu</th>
+                <th scope="col">Mesaj Detayı</th>
+                <th scope="col">Gönderim Tarih</th>
+                <th scope="col">Okundu-Okunmadı</th>
+                <th scope="col">Mesajı Aç</th>
+                <th scope="col">Mesajı Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MessageId</td>
+                    <td>@item.NameSurname</td>
+                    <td>@item.Email</td>
+                    <td>@item.Subject</td>
+                    <td>@item.MessageDetail</td>
+                    <td>@item.SendDate.ToShortDateString()</td>
+                    @if (item.IsRead == true)
+                    {
+                        <td><a href="/Message/ChangeMessageIsReadToFalse/@item.MessageId" class="btn btn-outline-warning">Okunmadı Olarak İşaretle</a></td>
+                    }
+                    else
+                    {
+                        <td><a href="/Message/ChangeMessageIsReadToTrue/@item.MessageId" class="btn btn-outline-success">Okundu Olarak İşaretle</a></td>
+                    }
+                    <td><a href="/Message/OpenMessage/@item.MessageId" class="btn btn-sm btn-danger">Sil</a></td>
+                    <td><a href="/Message/UpdateMessage/@item.MessageId" class="btn btn-sm btn-success">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

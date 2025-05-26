@@ -1,0 +1,32 @@
+﻿@model PortfolioCore.Entities.Education
+@{
+    ViewData["Title"] = "UpdateEducation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<form method="post" class="p-4 border rounded shadow bg-light" style="max-width: 600px;">
+    <input  type="hidden" asp-for="EducationId"/>
+    <div class="mb-3">
+        <label class="form-label">Okul Adı</label>
+        <input type="text" class="form-control border border-dark" asp-for="Title" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Bölüm</label>
+        <input type="text" class="form-control border border-dark" asp-for="SubTitle" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Tarih</label>
+        <input type="text" class="form-control border border-dark" asp-for="DateInfo" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Eğitim Durumu</label>
+        <input type="text" class="form-control border border-dark" asp-for="Description" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Eğitimi Oluştur</button>
+</form>
+
